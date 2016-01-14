@@ -28,10 +28,16 @@ end
   chris = Instructor.new
   chris.name = "Chris"
 
+# Call the teach method on your instructor instance and call the learn method
+# on your student. Next, call the teach method on your student instance.
+# Why doesn't that work? Leave a comment in your program explaining why.
+
 chris.teach
 
-cristina.teach
+cristina.learn
 
+cristina.teach #This does not work because it is not connected to the method
+# in a different class, so it returns undefined method `teach'.
 
 # The student class has a method called learn that outputs "I get it!".
 # The instructor class has a method called teach that outputs

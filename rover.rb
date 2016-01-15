@@ -49,17 +49,14 @@ def turn(turn_direction)
   end
 end
 
+#not sure if methods should be modules
+
 def move(direction)
   case direction
-  when @direction == "N" { @x += 1 }
+  when @direction == "N" {(@x += 1) if > x }
   when @direction == "E" { @y += 1 }
   when @direction == "S" { @x -= 1 }
   when @direction == "W" { @y -= 1 }
-  end
-
-  when "E"
-
-
 end
 
 end
@@ -71,23 +68,21 @@ size = size.split("")
 
 puts "Enter your Rover One's x,y location and which direction it is facing: "
 location_one = gets.chomp
-location_one = location_one.split("")
+location_one = location_one.upcase
+read_instruction(location_one)
 
 puts "Enter your Rover One's  action using L, M, R: "
 action_one = gets.chomp
-action_one = action_one.split("")
+action_one = action_one.upcase
+read_instruction(action_one)
+
 
 puts "Enter your Rover Two's x,y location and which direction it is facing: "
 location_two = gets.chomp
-location_two = location_two.split("")
+location_two = location_two.upcase
+read_instruction(location_two)
 
 puts "Enter your Rover Two's action using L, M, R: "
 action_two = gets.chomp
-action_two = action_two.split("")  #
-  # Puts "NASA Rover1 0,0,N where should I move next?"
-  # answer = gets.chomp
-  # answer.split(num, "action")
-  # if answer =
-
-
-  #at the end of 2 method tell rover 1 to move and vice versa
+action_two = action_two.upcase
+read_instruction(action_two)

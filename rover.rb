@@ -53,17 +53,23 @@ end
 
 def move(direction)
   case direction
-  when @direction == "N" {(@x += 1) if > x }
+  when @direction == "N" { @x += 1 } #if answer is beigger > then b plateau == 0
   when @direction == "E" { @y += 1 }
   when @direction == "S" { @x -= 1 }
   when @direction == "W" { @y -= 1 }
 end
 
+#I need to output the information of new coordinates
+
 end
+
+rover = Rover.new
+rover = "Rover One"
 
 puts "Enter plateau size: "
 size = gets.chomp
-size = size.split("")
+size = size.split(a,b)
+
 
 
 puts "Enter your Rover One's x,y location and which direction it is facing: "
@@ -81,6 +87,7 @@ puts "Enter your Rover Two's x,y location and which direction it is facing: "
 location_two = gets.chomp
 location_two = location_two.upcase
 read_instruction(location_two)
+#Rover.new
 
 puts "Enter your Rover Two's action using L, M, R: "
 action_two = gets.chomp

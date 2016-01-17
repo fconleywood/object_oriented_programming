@@ -9,8 +9,13 @@ class Rover
   end
 
 def read_instruction(instructions)
+  # coordinates = location.split("")
+  # coordinates
+  # @x = coordinates[0].to_i
+  # @y = coordinates[2].to_i
+  # @direction = coordinates[4].upcase
   instructions_list = instructions.split("")
-  # puts "#{@x}, #{@y}, #{@heading}"
+  puts "#{@x}, #{@y}, #{@direction}"
   instructions_list.each do |action|
     if action == "M"
       move(action)
@@ -51,14 +56,14 @@ end
 
 #not sure if methods should be modules
 
-def move(direction)
-  case direction
-  when @direction == "N" { @y += 1 } #if answer is beigger > then b plateau == 0
-  when @direction == "E" { @x += 1 }
-  when @direction == "S" { @y -= 1 }
-  when @direction == "W" { @x -= 1 }
-end
-end
+    def move(direction)
+      case direction
+      when @direction == "N" = {@y += 1} #if answer is beigger > then b plateau == 0
+      when @direction == "E" = {@x += 1}
+      when @direction == "S" = {@y -= 1}
+      when @direction == "W" = {@x -= 1}
+      end
+    end
 # def test
 #   testrover = Rover.new(1,2,"N")
 #   testrover.read_instruction("LMLMLMLMM")
@@ -68,6 +73,7 @@ end
 
 # rover = Rover.new
 # rover = "Rover One"
+end
 
     puts "Enter plateau size: "
     size = gets.chomp
@@ -75,31 +81,29 @@ end
 
     puts "Rover One: Enter my x,y coordinates and compass orientation using N,W,E or S: "
     location_one = gets.chomp
-    location_one = location_one.upcase
-    read_instruction(location_one)
+    location_one = location_one.upcase.split("")
+
 
     puts "Enter your Rover One's action using L, M, R: "
     rover1_move = gets.chomp
     rover1_move = action_one.upcase
-    read_instruction(rover1_move)
+
 
     puts "Rover Two: Enter my x,y coordinates and compass orientation using N,W,E or S: "
     location_two = gets.chomp
-    location_two = location_two.upcase
-    read_instruction(location_two)
+    location_two = location_two.upcase.split("")
+
 
     puts "Enter your Rover Two's action using L, M, R: "
     rover2_move = gets.chomp
     rover2_move = rover2_move.upcase
-    read_instruction(rover2_move)
+
+    rover1 = Rover.new(location_one[0].to_i,location_one[2].to_i,location_one[4])
+    rover2 = Rover.new(location_two[0].to_i,location_two[2].to_i,location_two[4])
+
+    rover1.read_instruction(rover1_move)
+    rover2.read_instruction(rover2_move)
 
 
-    rover1 = Rover.new(rover1_move[0].to_i,rover1_move[1].to_i,rover1_move[2])
-    rover2 = Rover.new(rover2_move[0].to_i,rover2_move[1].to_i,rover2_move[2])
-
-    rover1.read_instruction(rover1_instructions)
-    rover2.read_instruction(rover2_instructions)
-
-    puts "Rover 1 is located: #{rover1.x} #{rover1.y} #{rover1.heading}"
-    puts "Rover 2 is located: #{rover2.x} #{rover2.y} #{rover2.heading}"
-  end
+    puts "Rover 1 is located: #{rover1.x} #{rover1.y} #{rover1.direction}"
+    puts "Rover 2 is located: #{rover2.x} #{rover2.y} #{rover2.direction}"

@@ -6,8 +6,20 @@ class Goods
     @price = price
   end
 
+  def tax(good)
+      if good == "imported" then do duty(good)
+      elsif good == "book", "chocolate", "chocolates", "pills" then do create.new
+      elsif good do basic_tax
+      end
+    end
+    # call on item [1] if == "imported" send good to duty method :
+    # call on item [2] if "book", "chocolate", "chocolates"
 
-
+  def duty(good)
+      good[]
+      # 0.5
+      end
+    end
 
 end
 
@@ -17,19 +29,19 @@ end
     item1 = "1 book at 12.49"  #test line
     item1 = gets.chomp
     list1_item1 = item1.split("")
-    tax.list1_item1
+    list1_item1.tax(good)
 
     puts "Grocery list next item: "
     item2 = "1 music CD at 14.99"  #test line
     item2 = gets.chomp
     list1_item2 = item2.split("")
-    tax.list1_item2
+    list1_item2.tax(good)
 
     puts "Grocery list next item: "
     item3 = "1 chocolate bar at 0.85" #test line
     item3 = gets.chomp
     list1_item3 = item3.split("")
-    tax.list1_item3
+    list1_item3.tax(good)
 
 
 
@@ -38,13 +50,13 @@ end
     item1 = "1 imported box of chocolates at 10.00" #test line
     item1 = gets.chomp
     list2_item1 = item1.split("")
-    tax.list2_item1
+    list2_item1.tax(good)
 
     puts "Grocery list next item: "
     item2 = "1 imported bottle of perfume at 47.50" #test line
     item2 = gets.chomp
     list2_item2 = item2.split("")
-    tax.list2_item2
+    list2_item2.tax(good)
 
 
 
@@ -53,25 +65,25 @@ end
     item1 = "1 imported bottle of perfume at 27.99" #test line
     item1 = gets.chomp
     list3_item1 = item1.split("")
-    tax.list3_item1
+    list3_item1.tax(good)
 
     puts "Grocery list next item: "
     item2 = "1 bottle of perfume at 18.99" #test line
     item2 = gets.chomp
     list3_item2 = item2.split("")
-    tax.list3_item2
+    list3_item2.tax(good)
 
     puts "Grocery list next item: "
     item3 = "1 packet of headache pills at 9.75" #test line
     item3 = gets.chomp
     list3_item3 = item3.split("")
-    tax.list3_item3
+    list3_item3.tax(good)
 
     puts "Grocery list next item: "
     item4 = "1 box of imported chocolates at 11.25"
     item4 = gets.chomp
     list3_item4 = item4.split("")
-    tax.list3_item4
+    list3_item4.tax(good)
 
 
 

@@ -1,5 +1,5 @@
 class Rover
-  attr_accessor :x, :y, :dir
+  attr_accessor :x, :y, :direction
 
   def initialize(x, y, direction)
     @x = x
@@ -81,14 +81,16 @@ end
     rover2_move = gets.chomp
     rover2_move = rover2_move.split("")
 
+    x1 = location_one[0].to_i
+    y1 = location_one[1].to_i
+    dir1 = location_one[2]
 
-    rover1 = Rover.new(location_one[0].to_i,location_one[1].to_i,location_one[2])
+    rover1 = Rover.new(x1, y1, dir1)
     rover2 = Rover.new(location_two[0].to_i,location_two[1].to_i,location_two[2])
 
     rover1.read_instruction(rover1_move)
     rover2.read_instruction(rover2_move)
-    
-     puts "\n************************"
+
 
     puts "Rover 1 is located: #{rover1.x} #{rover1.y} #{rover1.direction}"
     puts "Rover 2 is located: #{rover2.x} #{rover2.y} #{rover2.direction}"
